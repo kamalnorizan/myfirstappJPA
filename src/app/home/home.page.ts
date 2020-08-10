@@ -19,6 +19,6 @@ export class HomePage {
   }
 
   onClickNavCtrl() {
-    this.navCtrl.navigateForward('/aboutus');
+    this.navCtrl.navigateForward('/contact-us');
   }
 }

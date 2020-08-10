@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contact Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <ion-input [(ngModel)]="myText" type="text" placeholder="Awesome Input"></ion-input>
+<ion-button (click)="changetext()" expand="block" fill="solid">
+  Change Text from Controller
+</ion-button>
+ <h2>{{myText}}</h2>
+
+</ion-content>

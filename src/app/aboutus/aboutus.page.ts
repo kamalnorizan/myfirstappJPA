@@ -25,8 +25,39 @@ export class AboutusPage implements OnInit {
     await alert.present();
   }
 
+  async presentAlertConfirm() {
+    const alert = await this.alertCtrl.create({
+      header: 'Confirm!',
+      message: 'Message <strong>text</strong>!!!',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }, {
+          text: 'Test',
+          handler: () => {
+            this.presentAlert('Saya dari click me');
+          }
+        }
+      ]
+    });
+    console.log('dari alert confirm');
+    await alert.present();
+  }
+
   clickMe() {
-    this.presentAlert('Saya dari click me');
+    // this.presentAlert('Saya dari click me');
+    this.presentAlertConfirm();
+    console.log('dari clickme');
   }
 
 }
