@@ -1,3 +1,4 @@
+import { AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutusPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public alertCtrl: AlertController
+  ) { }
 
   ngOnInit() {
+  }
+
+  async presentAlert(msg) {
+    const alert = await this.alertCtrl.create({
+      header: 'Test Component Alert',
+      subHeader: 'Test',
+      message: msg,
+      buttons: ['Baik']
+    });
+    await alert.present();
+  }
+
+  clickMe() {
+    this.presentAlert('Saya dari click me');
   }
 
 }
